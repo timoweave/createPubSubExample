@@ -59,8 +59,6 @@ export function createPubSub<StoreData>(initialState: StoreData) {
   const PubSubProvider = (props: React.PropsWithChildren) => {
     const pubSub = usePubSub(initialState);
 
-    console.log({ store: pubSub.get() });
-
     return (
       <PubSubContext.Provider value={pubSub}>
         <>{props.children}</>
