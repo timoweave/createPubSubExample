@@ -24,27 +24,26 @@ const STREET_DEFAULT: StreetType = {
    state: "",
 };
 
-const {
-   PubSubProvider, 
-   useSub,
-} = createPubSub<StreetType>(STREET_DEFAULT);
+const pubSub = createPubSub<StreetType>(STREET_DEFAULT);
+const StreetProvider = pubSub.PubSubProvider;
+const useStreet = pubSub.useSub;
 
 const Street1 = () => {
-   const {store: street1} = useSub(
+   const {data: street1} = useStreet(
       store => store.street1,
    );
    return (<div>{street1}</div>);
 }
 
 const Street1Input = () => {
-   const {store: street1, setStore} = useSub(
+   const {data: street1, setData} = useStreet(
       store => store.street1,
    );
    return (
       <input 
          type="text" 
          value={street1} 
-         onChange={e => setStore({street1: e.target.value})}
+         onChange={e => setData({street1: e.target.value})}
       />
    );
 }
@@ -70,19 +69,19 @@ const ZipCode = () => ...
 const ZipCodeInput = () => ...
 
 const App = () => (
-   <PubSubProvider>
+   <StreetProvider>
       <Street1/>
-      <Street1Input/>
       <Street2/>
-      <Street2Input/>
       <City/>
-      <CityInput/>
       <County/>
-      <CountyInput/>
       <State/>
-      <StateInput/>
       <ZipCode/>
+      <Street1Input/>
+      <Street2Input/>
+      <CityInput/>
+      <CountyInput/>
+      <StateInput/>
       <ZipCodeInput/>
-   </PubSubProvider>
+   </StreetProvider>
 );
 ```

@@ -31,14 +31,14 @@ export function PersonFirstName() {
 }
 
 export function PersonFirstNameInput() {
-  const { data: firstName, setStore } = usePersonStore((store) => store.first);
+  const { data: firstName, setData } = usePersonStore((store) => store.first);
 
   return (
     <div style={{ display: "flex" }}>
       <input
         type="text"
         value={firstName}
-        onChange={(e) => setStore({ first: e.target.value })}
+        onChange={(e) => setData({ first: e.target.value })}
       />
     </div>
   );
@@ -55,14 +55,14 @@ export function PersonLastName() {
 }
 
 export function PersonLastNameInput() {
-  const { data: lastName, setStore } = usePersonStore((store) => store.last);
+  const { data: lastName, setData } = usePersonStore((store) => store.last);
 
   return (
     <div style={{ display: "flex" }}>
       <input
         type="text"
         value={lastName}
-        onChange={(e) => setStore({ last: e.target.value })}
+        onChange={(e) => setData({ last: e.target.value })}
       />
     </div>
   );
@@ -79,14 +79,14 @@ export function PersonAge() {
 }
 
 export function PersonAgeInput() {
-  const { data: age, setStore } = usePersonStore((store) => store.age);
+  const { data: age, setData } = usePersonStore((store) => store.age);
 
   return (
     <div style={{ display: "flex" }}>
       <input
         type="number"
         value={age}
-        onChange={(e) => setStore({ age: Number(e.target.value) })}
+        onChange={(e) => setData({ age: Number(e.target.value) })}
       />
     </div>
   );
@@ -103,7 +103,7 @@ export function PersonGender() {
 }
 
 export function PersonGenderSelect() {
-  const { data: gender, setStore } = usePersonStore((store) => store.gender);
+  const { data: gender, setData } = usePersonStore((store) => store.gender);
 
   return (
     <div style={{ display: "flex" }}>
@@ -111,7 +111,7 @@ export function PersonGenderSelect() {
         style={{ width: "100%" }}
         value={gender}
         onChange={(e) =>
-          setStore({ gender: e.target.value as "Male" | "Female" })
+          setData({ gender: e.target.value as "Male" | "Female" })
         }
       >
         <option value="Male">Male</option>

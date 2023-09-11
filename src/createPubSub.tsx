@@ -76,7 +76,7 @@ export function createPubSub<StoreData>(initialState: StoreData) {
       (onChange) => context.subscribe(onChange),
       () => selectStoreMember(context.get()),
     );
-    return { data, setStore: context.set };
+    return { data, setData: context.set };
   }
 
   return { PubSubProvider, useSub };

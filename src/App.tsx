@@ -27,45 +27,45 @@ import {
 } from "./Person.tsx";
 
 function App() {
+  const style: React.CSSProperties = {
+    display: "grid",
+    gridTemplateColumns: "1fr  1fr",
+    gap: "10px",
+    placeItems: "flex-start",
+    width: "600px",
+  };
+
   return (
-    <div
-      style={{
-        display: "grid",
-        gridTemplateColumns: "1fr  1fr",
-        gap: "10px",
-        placeItems: "flex-start",
-        width: "600px",
-      }}
-    >
-      <div>
-        <PersonStoreProvider>
-          <PersonFirstName />
-          <PersonFirstNameInput />
-          <PersonLastName />
-          <PersonLastNameInput />
-          <PersonAge />
-          <PersonAgeInput />
-          <PersonGender />
-          <PersonGenderSelect />
-        </PersonStoreProvider>
-      </div>
-      <div>
-        <AddressStoreProvider>
-          <Street1 />
-          <Street2 />
-          <City />
-          <County />
-          <State />
-          <ZipCode />
-          <Street1Input />
-          <Street2Input />
-          <CityInput />
-          <CountyInput />
-          <StateInput />
-          <ZipCodeInput />
-        </AddressStoreProvider>
-      </div>
-    </div>
+    <PersonStoreProvider>
+      <AddressStoreProvider>
+        <div style={style}>
+          <div>
+            <PersonFirstName />
+            <PersonFirstNameInput />
+            <PersonLastName />
+            <PersonLastNameInput />
+            <PersonAge />
+            <PersonAgeInput />
+            <PersonGender />
+            <PersonGenderSelect />
+          </div>
+          <div>
+            <Street1 />
+            <Street2 />
+            <City />
+            <County />
+            <State />
+            <ZipCode />
+            <Street1Input />
+            <Street2Input />
+            <CityInput />
+            <CountyInput />
+            <StateInput />
+            <ZipCodeInput />
+          </div>
+        </div>
+      </AddressStoreProvider>
+    </PersonStoreProvider>
   );
 }
 

@@ -28,14 +28,14 @@ export const Street1 = () => {
 };
 
 export const Street1Input = () => {
-  const { data: street1, setStore } = useSub((store) => store.street1);
+  const { data: street1, setData } = useSub((store) => store.street1);
   return (
     <div style={{ display: "flex" }}>
       <input
         type="text"
         value={street1}
         placeholder="street1"
-        onChange={(e) => setStore({ street1: e.target.value })}
+        onChange={(e) => setData({ street1: e.target.value })}
       />
     </div>
   );
@@ -47,14 +47,14 @@ export const Street2 = () => {
 };
 
 export const Street2Input = () => {
-  const { data: street2, setStore } = useSub((store) => store.street2);
+  const { data: street2, setData } = useSub((store) => store.street2);
   return (
     <div style={{ display: "flex" }}>
       <input
         type="text"
         placeholder="Street 2"
         value={street2}
-        onChange={(e) => setStore({ street2: e.target.value })}
+        onChange={(e) => setData({ street2: e.target.value })}
       />
     </div>
   );
@@ -66,14 +66,14 @@ export const City = () => {
 };
 
 export const CityInput = () => {
-  const { data: city, setStore } = useSub((store) => store.city);
+  const { data: city, setData } = useSub((store) => store.city);
   return (
     <div style={{ display: "flex" }}>
       <input
         type="text"
         placeholder="City"
         value={city}
-        onChange={(e) => setStore({ city: e.target.value })}
+        onChange={(e) => setData({ city: e.target.value })}
       />
     </div>
   );
@@ -85,14 +85,14 @@ export const County = () => {
 };
 
 export const CountyInput = () => {
-  const { data: county, setStore } = useSub((store) => store.county);
+  const { data: county, setData } = useSub((store) => store.county);
   return (
     <div style={{ display: "flex" }}>
       <input
         type="text"
         placeholder="County"
         value={county}
-        onChange={(e) => setStore({ county: e.target.value })}
+        onChange={(e) => setData({ county: e.target.value })}
       />
     </div>
   );
@@ -104,14 +104,14 @@ export const State = () => {
 };
 
 export const StateInput = () => {
-  const { data: state, setStore } = useSub((store) => store.state);
+  const { data: state, setData } = useSub((store) => store.state);
   return (
     <div style={{ display: "flex" }}>
       <input
         type="text"
         placeholder="State"
         value={state}
-        onChange={(e) => setStore({ state: e.target.value })}
+        onChange={(e) => setData({ state: e.target.value })}
       />
     </div>
   );
@@ -123,14 +123,14 @@ export const ZipCode = () => {
 };
 
 export const ZipCodeInput = () => {
-  const { data: zipCode, setStore } = useSub((store) => store.zipCode);
+  const { data: zipCode, setData } = useSub((store) => store.zipCode);
   return (
     <div style={{ display: "flex" }}>
       <input
         type="number"
         placeholder="Zip Code"
         value={zipCode}
-        onChange={(e) => setStore({ zipCode: Number(e.target.value) })}
+        onChange={(e) => setData({ zipCode: Number(e.target.value) })}
       />
     </div>
   );
