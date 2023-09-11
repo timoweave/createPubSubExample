@@ -7,7 +7,7 @@ function `createPubSub` take type definition and default value to create Provide
 
 # Example
 
-```
+```tsx
 interface StreetType {
    street1: string;
    street2: string;
@@ -48,25 +48,25 @@ const Street1Input = () => {
    );
 }
 
-const Street2 = () => ...
+const Street2 = () => { /* ... */ }
 
-const Street2Input = () => ...
+const Street2Input = () => { /* ... */ }
 
-const City = () => ...
+const City = () => { /* ... */ }
 
-const CityInput = () => ...
+const CityInput = () => { /* ... */ }
 
-const County = () => ...
+const County = () => { /* ... */ }
 
-const CountyInput = () => ...
+const CountyInput = () => { /* ... */ }
 
-const State = () => ...
+const State = () => { /* ... */ }
 
-const StateInput = () => ...
+const StateInput = () => { /* ... */ }
 
-const ZipCode = () => ...
+const ZipCode = () => { /* ... */ }
 
-const ZipCodeInput = () => ...
+const ZipCodeInput = () => { /* ... */ }
 
 const App = () => (
    <StreetProvider>
