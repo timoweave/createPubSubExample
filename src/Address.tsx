@@ -23,12 +23,12 @@ export const AddressStoreProvider = PubSubProvider;
 export const useAddressStore = useSub;
 
 export const Street1 = () => {
-  const { data: street1 } = useSub((store) => store.street1);
+  const { data: street1 } = useAddressStore((store) => store.street1);
   return <div style={{ display: "flex" }}>Street 1: {street1}</div>;
 };
 
 export const Street1Input = () => {
-  const { data: street1, setData } = useSub((store) => store.street1);
+  const { data: street1, setData } = useAddressStore((store) => store.street1);
   return (
     <div style={{ display: "flex" }}>
       <input
@@ -42,12 +42,12 @@ export const Street1Input = () => {
 };
 
 export const Street2 = () => {
-  const { data: street2 } = useSub((store) => store.street2);
+  const { data: street2 } = useAddressStore((store) => store.street2);
   return <div style={{ display: "flex" }}>Street 2: {street2}</div>;
 };
 
 export const Street2Input = () => {
-  const { data: street2, setData } = useSub((store) => store.street2);
+  const { data: street2, setData } = useAddressStore((store) => store.street2);
   return (
     <div style={{ display: "flex" }}>
       <input
@@ -61,12 +61,12 @@ export const Street2Input = () => {
 };
 
 export const City = () => {
-  const { data: city } = useSub((store) => store.city);
+  const { data: city } = useAddressStore((store) => store.city);
   return <div style={{ display: "flex" }}>City: {city}</div>;
 };
 
 export const CityInput = () => {
-  const { data: city, setData } = useSub((store) => store.city);
+  const { data: city, setData } = useAddressStore((store) => store.city);
   return (
     <div style={{ display: "flex" }}>
       <input
@@ -80,12 +80,12 @@ export const CityInput = () => {
 };
 
 export const County = () => {
-  const { data: county } = useSub((store) => store.county);
+  const { data: county } = useAddressStore((store) => store.county);
   return <div style={{ display: "flex" }}>County: {county}</div>;
 };
 
 export const CountyInput = () => {
-  const { data: county, setData } = useSub((store) => store.county);
+  const { data: county, setData } = useAddressStore((store) => store.county);
   return (
     <div style={{ display: "flex" }}>
       <input
@@ -99,12 +99,12 @@ export const CountyInput = () => {
 };
 
 export const State = () => {
-  const { data: state } = useSub((store) => store.state);
+  const { data: state } = useAddressStore((store) => store.state);
   return <div style={{ display: "flex" }}>State: {state}</div>;
 };
 
 export const StateInput = () => {
-  const { data: state, setData } = useSub((store) => store.state);
+  const { data: state, setData } = useAddressStore((store) => store.state);
   return (
     <div style={{ display: "flex" }}>
       <input
@@ -118,12 +118,12 @@ export const StateInput = () => {
 };
 
 export const ZipCode = () => {
-  const { data: zipCode } = useSub((store) => store.zipCode);
+  const { data: zipCode } = useAddressStore((store) => store.zipCode);
   return <div style={{ display: "flex" }}>Zip Code: {zipCode}</div>;
 };
 
 export const ZipCodeInput = () => {
-  const { data: zipCode, setData } = useSub((store) => store.zipCode);
+  const { data: zipCode, setData } = useAddressStore((store) => store.zipCode);
   return (
     <div style={{ display: "flex" }}>
       <input
