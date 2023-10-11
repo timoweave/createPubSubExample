@@ -1,5 +1,5 @@
 /* eslint-disable react-refresh/only-export-components */
-import { createPubSub } from "./createPubSub";
+import { createPubSub } from "create-publish-subscriber";
 
 interface StreetType {
   street1: string;
@@ -17,9 +17,9 @@ const STREET_DEFAULT: StreetType = {
   state: "",
 };
 
-const { PubSubProvider, useSub } = createPubSub<StreetType>(STREET_DEFAULT);
+const { PubProvider, useSub } = createPubSub<StreetType>(STREET_DEFAULT);
 
-export const AddressStoreProvider = PubSubProvider;
+export const AddressStoreProvider = PubProvider;
 export const useAddressStore = useSub;
 
 export const Street1 = () => {

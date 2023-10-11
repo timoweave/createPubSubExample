@@ -1,5 +1,5 @@
 /* eslint-disable react-refresh/only-export-components */
-import { createPubSub } from "./createPubSub";
+import { createPubSub } from "create-publish-subscriber";
 
 export interface Person {
   first: string;
@@ -15,9 +15,9 @@ export const PERSON_DEAULT: Person = {
   gender: "Male",
 };
 
-const { PubSubProvider, useSub } = createPubSub<Person>(PERSON_DEAULT);
+const { PubProvider, useSub } = createPubSub<Person>(PERSON_DEAULT);
 
-export const PersonStoreProvider = PubSubProvider;
+export const PersonStoreProvider = PubProvider;
 export const usePersonStore = useSub;
 
 export function PersonFirstName() {
