@@ -1,5 +1,5 @@
 /* eslint-disable react-refresh/only-export-components */
-import { createPubSub } from "create-publish-subscriber";
+import { createPublishSubscriber } from "create-publish-subscriber";
 
 interface StreetType {
   street1: string;
@@ -17,7 +17,8 @@ const STREET_DEFAULT: StreetType = {
   state: "",
 };
 
-const { PubProvider, useSub } = createPubSub<StreetType>(STREET_DEFAULT);
+const { PubProvider, useSub } =
+  createPublishSubscriber<StreetType>(STREET_DEFAULT);
 
 export const AddressStoreProvider = PubProvider;
 export const useAddressStore = useSub;
@@ -33,7 +34,7 @@ export const Street1Input = () => {
     <div style={{ display: "flex" }}>
       <input
         type="text"
-        value={street1}
+        defaultValue={street1}
         placeholder="street1"
         onChange={(e) => setData({ street1: e.target.value })}
       />
@@ -53,7 +54,7 @@ export const Street2Input = () => {
       <input
         type="text"
         placeholder="Street 2"
-        value={street2}
+        defaultValue={street2}
         onChange={(e) => setData({ street2: e.target.value })}
       />
     </div>
@@ -72,7 +73,7 @@ export const CityInput = () => {
       <input
         type="text"
         placeholder="City"
-        value={city}
+        defaultValue={city}
         onChange={(e) => setData({ city: e.target.value })}
       />
     </div>
@@ -91,7 +92,7 @@ export const CountyInput = () => {
       <input
         type="text"
         placeholder="County"
-        value={county}
+        defaultValue={county}
         onChange={(e) => setData({ county: e.target.value })}
       />
     </div>
@@ -110,7 +111,7 @@ export const StateInput = () => {
       <input
         type="text"
         placeholder="State"
-        value={state}
+        defaultValue={state}
         onChange={(e) => setData({ state: e.target.value })}
       />
     </div>
@@ -129,7 +130,7 @@ export const ZipCodeInput = () => {
       <input
         type="number"
         placeholder="Zip Code"
-        value={zipCode}
+        defaultValue={zipCode}
         onChange={(e) => setData({ zipCode: Number(e.target.value) })}
       />
     </div>

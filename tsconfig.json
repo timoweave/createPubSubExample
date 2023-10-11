@@ -20,6 +20,6 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src", "src/createPubSub.tsx"],
+  "include": ["src", "src/createPublishSubscriber.tsx"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

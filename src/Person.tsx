@@ -1,5 +1,5 @@
 /* eslint-disable react-refresh/only-export-components */
-import { createPubSub } from "create-publish-subscriber";
+import { createPublishSubscriber } from "create-publish-subscriber";
 
 export interface Person {
   first: string;
@@ -15,7 +15,7 @@ export const PERSON_DEAULT: Person = {
   gender: "Male",
 };
 
-const { PubProvider, useSub } = createPubSub<Person>(PERSON_DEAULT);
+const { PubProvider, useSub } = createPublishSubscriber<Person>(PERSON_DEAULT);
 
 export const PersonStoreProvider = PubProvider;
 export const usePersonStore = useSub;
@@ -37,7 +37,7 @@ export function PersonFirstNameInput() {
     <div style={{ display: "flex" }}>
       <input
         type="text"
-        value={firstName}
+        defaultValue={firstName}
         onChange={(e) => setData({ first: e.target.value })}
       />
     </div>
@@ -61,7 +61,7 @@ export function PersonLastNameInput() {
     <div style={{ display: "flex" }}>
       <input
         type="text"
-        value={lastName}
+        defaultValue={lastName}
         onChange={(e) => setData({ last: e.target.value })}
       />
     </div>
@@ -85,7 +85,7 @@ export function PersonAgeInput() {
     <div style={{ display: "flex" }}>
       <input
         type="number"
-        value={age}
+        defaultValue={age}
         onChange={(e) => setData({ age: Number(e.target.value) })}
       />
     </div>
@@ -109,7 +109,7 @@ export function PersonGenderSelect() {
     <div style={{ display: "flex" }}>
       <select
         style={{ width: "100%" }}
-        value={gender}
+        defaultValue={gender}
         onChange={(e) =>
           setData({ gender: e.target.value as "Male" | "Female" })
         }
